@@ -14,5 +14,6 @@ namespace StoackApp.Core.Application.ViewModels.Products
         public string ImagePath { get; set; }
         public double Price { get; set; }
         public string CategoryName { get; set; }
+        public int CategoryId { get; set; }
     }
 }

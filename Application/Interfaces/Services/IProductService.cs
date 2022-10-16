@@ -9,6 +9,6 @@ namespace StoackApp.Core.Application.Interfaces.Services
 {
     public interface IProductService : IGenericService<SaveProductViewModel, ProductViewModel>
     {
-
+        Task<List<ProductViewModel>> GetAllViewModelWithFilters(FilterProductViewModel filters);
     }
 }

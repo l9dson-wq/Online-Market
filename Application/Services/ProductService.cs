@@ -73,5 +73,28 @@ namespace Application.Services
                 CategoryName = s.Category.Name,
             }).ToList();
         }
+
+        public async Task<List<ProductViewModel>> GetAllViewModelWithFilters(FilterProductViewModel filters)
+        {
+            var list = await _repository.GetAllWithInclude(new List<string> { "Category" });
+
+            var listViewModels = list.Select(s => new ProductViewModel
+            {
+                Name = s.Name,
+                Description = s.Description,
+                Id = s.Id,
+                Price = s.Price,
+                ImagePath = s.ImagePath,
+                CategoryName = s.Category.Name,
+                CategoryId = s.Category.Id
+            }).ToList();
+
+            if(filters.CategoryId != null)
+            {
+                listViewModels = listViewModels.Where(product => product.CategoryId == filters.CategoryId.Value).ToList();
+            }
+
+            return listViewModels;
+        }
     }
 }

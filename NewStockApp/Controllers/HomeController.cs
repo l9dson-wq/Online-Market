@@ -1,27 +1,24 @@
-﻿using Application.Services;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging;
+﻿using Microsoft.AspNetCore.Mvc;
 using StoackApp.Core.Application.Interfaces.Services;
-using StockApp.Infrastructure.Persistence.Context;
-using System;
-using System.Collections.Generic;
-using System.Diagnostics;
-using System.Linq;
-using System.Threading.Tasks;
+using StoackApp.Core.Application.ViewModels.Products;
 
 namespace DatabaseFirstExample.Controllers
 {
     public class HomeController : Controller
     {
         private readonly IProductService _service;
-        public HomeController(IProductService productService)
+        private readonly ICategoryService _Categoryservice;
+
+        public HomeController(IProductService productService, ICategoryService categoryService)
         {
             _service = productService;
+            _Categoryservice = categoryService;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(FilterProductViewModel vm )
         {
-            return View(await _service.GetAllViewModel());
+            ViewBag.Categories = await _Categoryservice.GetAllViewModel(); 
+            return View(await _service.GetAllViewModelWithFilters(vm));
         }          
     }
 }

@@ -17,5 +17,6 @@ namespace StoackApp.Core.Application.Interfaces.Services
         Task Delete(int id);
         Task<SaveViewModel> GetByIdSaveViewModel(int id);
         Task<List<ViewModel>> GetAllViewModel();
+        
     }
 }
