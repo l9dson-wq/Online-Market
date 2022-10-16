@@ -34,10 +34,8 @@
                     </div>
                     <div class="mb-3">
                         <label asp-for="CategoryId" class="form-label">Categoria: </label>
-                        <select asp-for="CategoryId" class="form-select">
-                            <option value="">Seleccione una opcion</option>
-                            <option value="1">Category Test</option>
-                            <option value="2">Category Test 2</option>
+                        <select asp-for="CategoryId" asp-items="@(new SelectList(Model.Categories, "Id","Name"))" class="form-select">
+                            <option>Seleccione una opcion</option>
                         </select>
                         <span asp-validation-for="CategoryId" class="text-danger"></span>
                     </div>

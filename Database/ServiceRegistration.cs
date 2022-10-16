@@ -4,11 +4,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using StoackApp.Core.Application.Interfaces.Repositories;
 using StockApp.Infrastructure.Persistence.Context;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace StockApp.Infrastructure.Persistence
 {
@@ -31,7 +26,9 @@ namespace StockApp.Infrastructure.Persistence
             #endregion
 
             #region Respotiris
+            services.AddTransient(typeof(IGenericRepository<>), typeof(GenericRepository<>));
             services.AddTransient<IProductRepository, ProductRepository>();
+            services.AddTransient<ICategoryRepository, CategoryRepository>();
             #endregion
         }
     }

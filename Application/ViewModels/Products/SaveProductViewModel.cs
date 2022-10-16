@@ -1,4 +1,5 @@
-﻿using System;
+﻿using StoackApp.Core.Application.ViewModels.Categories;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -17,7 +18,10 @@ namespace StoackApp.Core.Application.ViewModels.Products
         public string ImagePath { get; set; }
         [Required(ErrorMessage = "Debe colocar el precio del producto")]
         public double Price { get; set; }
-        [Required(ErrorMessage = "Debe colocar la categoria del producto")]
+
+        [Range(1, int.MaxValue, ErrorMessage = "Debe colocar la categoria del producto")]
         public int CategoryId { get; set; }
+
+        public List<CategoryViewModel> Categories { get; set; }
     }
 }

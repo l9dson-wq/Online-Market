@@ -13,9 +13,12 @@ namespace DatabaseFirstExample.Controllers
     public class ProductController : Controller
     {
         private readonly IProductService _service;
-        public ProductController(IProductService productService)
+        private readonly ICategoryService _Categoryservice;
+
+        public ProductController(IProductService productService, ICategoryService categoryservice)
         {
             _service = productService;
+            _Categoryservice = categoryservice;
         }
 
         public async Task<IActionResult> Index()
@@ -24,9 +27,12 @@ namespace DatabaseFirstExample.Controllers
             return View(list);
         }
 
-        public IActionResult Create()
+        public async Task<IActionResult> Create()
         {
-            return View("SaveProduct", new SaveProductViewModel());
+            SaveProductViewModel vm = new();
+            vm.Categories = await _Categoryservice.GetAllViewModel(); 
+
+            return View("SaveProduct", vm);
         }
 
         [HttpPost]
@@ -34,6 +40,7 @@ namespace DatabaseFirstExample.Controllers
         {
             if (!ModelState.IsValid)
             {
+                vm.Categories = await _Categoryservice.GetAllViewModel();
                 return View("SaveProduct", vm);
             }
 
@@ -43,7 +50,10 @@ namespace DatabaseFirstExample.Controllers
 
         public async Task<IActionResult> Edit(int id)
         {
-            return View("SaveProduct", await _service.GetByIdSaveViewModel(id));
+            SaveProductViewModel vm = await _service.GetByIdSaveViewModel(id);
+            vm.Categories = await _Categoryservice.GetAllViewModel();
+
+            return View("SaveProduct", vm);
         }
 
         [HttpPost]
@@ -51,6 +61,7 @@ namespace DatabaseFirstExample.Controllers
         {
             if (!ModelState.IsValid)
             {
+                vm.Categories = await _Categoryservice.GetAllViewModel();
                 return View("SaveProduct", vm);
             }
 

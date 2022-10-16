@@ -5,11 +5,11 @@ using StockApp.Infrastructure.Persistence.Context;
 
 namespace Application.Repository
 {
-    public class ProductRepository : GenericRepository<Product>, IProductRepository
+    public class CategoryRepository : GenericRepository<Category>, ICategoryRepository
     {
         private readonly ApplicationContext _dbContext;
 
-        public ProductRepository(ApplicationContext dbContext) : base(dbContext)
+        public CategoryRepository(ApplicationContext dbContext) : base(dbContext)
         {
             _dbContext = dbContext;
         }

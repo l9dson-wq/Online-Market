@@ -12,6 +12,7 @@ namespace StockApp.Infrastructure.Persistence
         {
             #region Services
             services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<ICategoryService, CategoryService>();
             #endregion
         }
     }

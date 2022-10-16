@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace StoackApp.Core.Application.Interfaces.Repositories
 {
-    public interface IProductRepository : IGenericRepository<Product>
+    public interface ICategoryRepository : IGenericRepository<Category>
     {
         
     }

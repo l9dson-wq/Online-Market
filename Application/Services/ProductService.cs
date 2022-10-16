@@ -63,13 +63,14 @@ namespace Application.Services
 
         public async Task<List<ProductViewModel>> GetAllViewModel()
         {
-            var list = await _repository.GetAllAsync();
+            var list = await _repository.GetAllWithInclude(new List<string> {"Category"});
             return list.Select(s=> new ProductViewModel { 
                 Name = s.Name,
                 Description = s.Description,
                 Id = s.Id,
                 Price = s.Price,
-                ImagePath = s.ImagePath
+                ImagePath = s.ImagePath,
+                CategoryName = s.Category.Name,
             }).ToList();
         }
     }
