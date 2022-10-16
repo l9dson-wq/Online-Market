@@ -548,7 +548,6 @@ C:\Users\AndelDev\source\repos\NewStockApp\NewStockApp\bin\Debug\net6.0\StockApp
 C:\Users\AndelDev\source\repos\NewStockApp\NewStockApp\bin\Debug\net6.0\StoackApp.Core.Application.pdb
 C:\Users\AndelDev\source\repos\NewStockApp\NewStockApp\bin\Debug\net6.0\StockApp.Infrastructure.Persistence.pdb
 C:\Users\AndelDev\source\repos\NewStockApp\NewStockApp\bin\Debug\net6.0\StockApp.Core.Domain.pdb
-C:\Users\AndelDev\source\repos\NewStockApp\NewStockApp\obj\Debug\net6.0\WebApp.NewStockApp.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\AndelDev\source\repos\NewStockApp\NewStockApp\obj\Debug\net6.0\staticwebassets.build.json
 C:\Users\AndelDev\source\repos\NewStockApp\NewStockApp\obj\Debug\net6.0\staticwebassets.development.json
 C:\Users\AndelDev\source\repos\NewStockApp\NewStockApp\obj\Debug\net6.0\scopedcss\bundle\WebApp.NewStockApp.styles.css
@@ -558,3 +557,4 @@ C:\Users\AndelDev\source\repos\NewStockApp\NewStockApp\obj\Debug\net6.0\refint\W
 C:\Users\AndelDev\source\repos\NewStockApp\NewStockApp\obj\Debug\net6.0\WebApp.NewStockApp.pdb
 C:\Users\AndelDev\source\repos\NewStockApp\NewStockApp\obj\Debug\net6.0\WebApp.NewStockApp.genruntimeconfig.cache
 C:\Users\AndelDev\source\repos\NewStockApp\NewStockApp\obj\Debug\net6.0\ref\WebApp.NewStockApp.dll
+C:\Users\AndelDev\source\repos\NewStockApp\NewStockApp\obj\Debug\net6.0\WebApp.NewStockApp.MvcApplicationPartsAssemblyInfo.cs

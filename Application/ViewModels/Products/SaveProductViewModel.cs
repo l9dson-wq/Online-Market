@@ -22,6 +22,6 @@ namespace StoackApp.Core.Application.ViewModels.Products
         [Range(1, int.MaxValue, ErrorMessage = "Debe colocar la categoria del producto")]
         public int CategoryId { get; set; }
 
-        public List<CategoryViewModel> Categories { get; set; }
+        public List<CategoryViewModel>? Categories { get; set; }
     }
 }
