@@ -11,6 +11,7 @@ namespace StockApp.Infrastructure.Persistence.Context
 
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<User> Users  { get; set; }
 
         public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = new CancellationToken())
         {
@@ -39,11 +40,13 @@ namespace StockApp.Infrastructure.Persistence.Context
             #region tables
             modelBuilder.Entity<Product>().ToTable("Products");
             modelBuilder.Entity<Category>().ToTable("Categories");
+            modelBuilder.Entity<User>().ToTable("Users");
             #endregion
 
             #region "primary keys"
             modelBuilder.Entity<Product>().HasKey(product => product.Id);//lambda
             modelBuilder.Entity<Category>().HasKey(category => category.Id);
+            modelBuilder.Entity<User>().HasKey(user => user.Id);
             #endregion
 
             #region relationships
@@ -51,6 +54,12 @@ namespace StockApp.Infrastructure.Persistence.Context
                 .HasMany<Product>(category => category.Products)
                 .WithOne(product => product.Category)
                 .HasForeignKey(product => product.CategoryId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            modelBuilder.Entity<User>()
+                .HasMany<Product>(user => user.Products)
+                .WithOne(product => product.User)
+                .HasForeignKey(product => product.UserId)
                 .OnDelete(DeleteBehavior.Cascade);
             #endregion
 
@@ -72,6 +81,29 @@ namespace StockApp.Infrastructure.Persistence.Context
             .Property(c => c.Name)
             .IsRequired()
             .HasMaxLength(100);
+            #endregion
+
+            #region Users
+            modelBuilder.Entity<User>().
+                Property(user => user.password)
+                .IsRequired();
+
+            modelBuilder.Entity<User>().
+                Property(user => user.Username)
+                .IsRequired();
+
+            modelBuilder.Entity<User>().
+                Property(user => user.Name)
+                .HasMaxLength(150)
+                .IsRequired();
+
+            modelBuilder.Entity<User>().
+                Property(user => user.Email)
+                .IsRequired();
+
+            modelBuilder.Entity<User>().
+                Property(user => user.Phone)
+                .IsRequired();
             #endregion
 
             #endregion

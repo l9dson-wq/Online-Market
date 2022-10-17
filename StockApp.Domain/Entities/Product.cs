@@ -17,5 +17,10 @@ namespace StockApp.Core.Domain.Entities
         //Navigation Property
         public Category? Category { get; set; }
 
+        public int UserId { get; set; }
+
+        //Navigation Property
+        public User? User { get; set; }
+
     }
 }
