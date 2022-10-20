@@ -1,0 +1,77 @@
+﻿@using StoackApp.Core.Application.ViewModels.Products 
+@using StoackApp.Core.Application.ViewModels.Categories 
+@model List<ProductViewModel>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-3">
+            <div class="card">
+                <div class="card-header bg-dark text-light">
+                    <h4>Filtros</h4>
+                </div>
+
+                <div class="card-body">
+                    <h4 class="card-title">Categorias</h4>
+
+                    <form method="post" asp-controller="Home" asp-action="Index">
+
+                        <div class="mb-3">
+                            <div class="form-check">
+                                <input class="form-check-input" value="null" type="radio" name="CategoryId" id="category-all" />
+                                <label class="form-check-label" for="category-all">Todas</label>
+                            </div>
+                        </div>
+
+                        @foreach (CategoryViewModel item in ViewBag.Categories)
+                        {
+                            <div class="mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" value="@item.Id" type="radio" name="CategoryId" id="category-@item.Id" />
+                                    <label class="form-check-label" for="category-@item.Id">@item.Name</label>
+                                </div>
+                            </div>
+                        }
+
+                        <button type="submit" class="btn btn-primary">Filtrar</button>
+                    </form>
+
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="col-9">
+            <div class="row">
+                @if (Model == null || Model.Count == 0)
+                {
+                    <h2>No hay Productos</h2>
+                }
+                else
+                {
+                    @foreach (ProductViewModel item in Model)
+                    {
+                        <div class="col-4 mb-3">
+                            <div class="card">
+                                <img src="@item.ImagePath" class="img-product-size bd-placeholder-img card-img-top " />
+
+                                <div class="card-body">
+                                    <h3>@item.Name</h3>
+                                    <p class="card-text">@item.Description</p>
+                                    <div class="d-flex justify-content-between align-items-center">
+                                        <small class="fw-bold">$@item.Price</small>
+                                        <span class="fw-bold text-info">@item.CategoryName</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                }
+            </div>
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,17 @@
+C:\Users\AndelDev\source\repos\NewStockApp\Database\bin\Debug\net6.0\StockApp.Infrastructure.Persistence.deps.json
+C:\Users\AndelDev\source\repos\NewStockApp\Database\bin\Debug\net6.0\StockApp.Infrastructure.Persistence.dll
+C:\Users\AndelDev\source\repos\NewStockApp\Database\bin\Debug\net6.0\StockApp.Infrastructure.Persistence.pdb
+C:\Users\AndelDev\source\repos\NewStockApp\Database\bin\Debug\net6.0\StoackApp.Core.Application.dll
+C:\Users\AndelDev\source\repos\NewStockApp\Database\bin\Debug\net6.0\StockApp.Core.Domain.dll
+C:\Users\AndelDev\source\repos\NewStockApp\Database\bin\Debug\net6.0\StoackApp.Core.Application.pdb
+C:\Users\AndelDev\source\repos\NewStockApp\Database\bin\Debug\net6.0\StockApp.Core.Domain.pdb
+C:\Users\AndelDev\source\repos\NewStockApp\Database\obj\Debug\net6.0\StockApp.Infrastructure.Persistence.csproj.AssemblyReference.cache
+C:\Users\AndelDev\source\repos\NewStockApp\Database\obj\Debug\net6.0\StockApp.Infrastructure.Persistence.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\AndelDev\source\repos\NewStockApp\Database\obj\Debug\net6.0\StockApp.Infrastructure.Persistence.AssemblyInfoInputs.cache
+C:\Users\AndelDev\source\repos\NewStockApp\Database\obj\Debug\net6.0\StockApp.Infrastructure.Persistence.AssemblyInfo.cs
+C:\Users\AndelDev\source\repos\NewStockApp\Database\obj\Debug\net6.0\StockApp.Infrastructure.Persistence.csproj.CoreCompileInputs.cache
+C:\Users\AndelDev\source\repos\NewStockApp\Database\obj\Debug\net6.0\StockApp.Infrastructure.Persistence.csproj.CopyComplete
+C:\Users\AndelDev\source\repos\NewStockApp\Database\obj\Debug\net6.0\StockApp.Infrastructure.Persistence.dll
+C:\Users\AndelDev\source\repos\NewStockApp\Database\obj\Debug\net6.0\refint\StockApp.Infrastructure.Persistence.dll
+C:\Users\AndelDev\source\repos\NewStockApp\Database\obj\Debug\net6.0\StockApp.Infrastructure.Persistence.pdb
+C:\Users\AndelDev\source\repos\NewStockApp\Database\obj\Debug\net6.0\ref\StockApp.Infrastructure.Persistence.dll

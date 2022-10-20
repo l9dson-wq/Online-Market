@@ -1,0 +1,51 @@
+﻿@using StoackApp.Core.Application.ViewModels.Products
+@model List<ProductViewModel>
+@{
+    ViewData["Title"] = "Products";
+}
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row mb-3">
+                        <div class="col-3 offset-9">
+                            <a class="btn btn-outline-primary" asp-controller="Product" asp-action="Create">Crear nuevo producto</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        @if(Model == null || Model.Count == 0)
+                        {
+                            <h4>No hay productos creados</h4>
+                        }
+                        else
+                        {
+                            @foreach (ProductViewModel item in Model)
+                            {
+                                <div class="col-4 mb-3">
+                                    <div class="card shadow-sm">
+                                        <img src="@item.ImagePath" class="img-product-size bd-placeholder-img card-img-top" />
+
+                                        <div class="card-body">
+                                            <h3 class="card-title">@item.Name - @item.CategoryName</h3>
+                                            <p class="card-text">@item.Description</p>
+                                            <div class="d-flex justify-content-between align-items-center">
+                                                <div class="btn-group">
+                                                    <a asp-controller="Product" asp-action="Edit" asp-route-id="@item.Id" class="btn btn-sm btn-outline-info">Editar</a>
+                                                    <a asp-controller="Product" asp-action="Delete" asp-route-id="@item.Id" class="btn btn-sm btn-outline-danger">Borrar</a>
+                                                </div>
+                                                <small class="fw-bold">$@item.Price</small>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            }
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
